@@ -1,16 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import ImageGallery from "../comps/ImageGallery";
 import UploadForm from "../comps/UploadForm";
-import { AUTH_CONTEXT } from "../contextAPI/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
+import axios from 'axios';
 
-const Home = () => {
-  const { user } = useContext(AUTH_CONTEXT);
-  console.log(user);
+const getData = () => {
+  return axios.get(`http://localhost:5000/posts?user_email=tarek@gmail.com`);
+}
+
+const Home = () => {  
+  // Tanstack Query to handle API calls
+  const {isLoading, data, refetch} = useQuery({
+    queryKey: ["posts"],
+    queryFn: getData,
+  })
   
   return (
     <>
-      <UploadForm />
-      <ImageGallery />
+      <UploadForm refetch={refetch}/>
+      <ImageGallery data={data}/>
     </>
   );
 };

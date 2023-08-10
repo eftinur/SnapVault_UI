@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { AUTH_CONTEXT } from "../contextAPI/AuthProvider";
 
-const UploadForm = () => {
+const UploadForm = ({refetch}) => {
   const [selectedFile, setSelectedFile] = useState(null);
   // user_data
   const { user } = useContext(AUTH_CONTEXT);
@@ -39,7 +39,7 @@ const UploadForm = () => {
         // Sending Upload Data to the Database
         axios.post("http://localhost:5000/posts", newPost).then((data) => {
           console.log(data.data);
-          // Force a Form reset
+          refetch(); // refetching data from API by Lifting State Up with TanStack Query
         });
       });
     }
