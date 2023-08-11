@@ -2,18 +2,17 @@ import React from "react";
 
 const ImageGallery = ({data}) => {
 
-console.log(data);
-
   return (
-    <div className="container mx-auto grid grid-cols-4 gap-2">
+    <div className="container min-h-screen mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 px-4 py-12">
       {data?.data.map(el => 
-      <div key={el._id} className="shadow-xl">
-        <figure>
+      <div key={el._id} className="image_wrapper shadow-xl">
+        <div className="image_wrapper w-full h-full">
           <img
             src={el?.display_url}
             alt=""
+            className="w-full h-full block object-cover"
           />
-        </figure>
+        </div>
       </div>)}
    
     </div>

@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
   console.log(user);
   
   if (isLoading) {
-    return <h6 className="text-center py-32 font-light text-slate-300">Hold on! Hold on while I have a look</h6>;
+    return <h6 className="h-screen text-center py-32 font-light text-slate-300">Hold on! Hold on while I have a look</h6>;
   }
   if (user) {
     return children;

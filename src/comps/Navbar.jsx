@@ -15,8 +15,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="container mx-auto flex justify-between py-4">
-      <a href="/">SnapVault</a>
+    <div className="container mx-auto flex justify-between py-4 px-4">
+      <a href="/" className="logo_wrapper">SnapVault</a>
       {user ? (
         <button onClick={handleLogOut}>Sign Out</button>
       ) : (
