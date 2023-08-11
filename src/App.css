@@ -64,12 +64,14 @@
   padding: 10px 20px;
   outline: none;
   border: none;
+  /* border-radius: 5px; */
 }
 
 /* Button */
 button {
   height: 2.8em;
   width: 9em;
+  /* border-radius: 5px; */
   background: transparent;
   -webkit-animation: jello-horizontal 0.9s both;
   animation: jello-horizontal 0.9s both;

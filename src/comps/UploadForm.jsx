@@ -51,8 +51,8 @@ const UploadForm = ({ refetch }) => {
   return (
     <div className="py-12 px-4">
       <div className="w-full lg:w-2/4 mx-auto py-12 bg-white shadow-xl px-2">
-        <h2 className="text-2xl font-bold text-center capitalize mb-6">
-          Upload your photos
+        <h2 className="text-2xl font-bold text-center mb-6">
+          Get Started and upload Your Photos
         </h2>
 
         <form onSubmit={handleSubmit} className="w-full gap-4 text-center py-2">
@@ -60,7 +60,7 @@ const UploadForm = ({ refetch }) => {
             onChange={handleUploads}
             type="file"
             accept="image/*"
-            className="w-fit block mx-auto border-b py-2 mb-4"
+            className="block mx-auto border-b py-2 mb-4"
           />
           <p className="text-xs mb-4">JPG, PNG, GIF files are allowed</p>
           <>

@@ -21,15 +21,16 @@ const SignUp = () => {
   return (
     <div className="container min-h-screen flex items-center mx-auto py-20 px-4">
       <div className="w-full lg:w-2/4 mx-auto shadow-xl px-2 py-8">
-        <h5 className="text-center capitalize">Register now to store your Images</h5>
+        <h5 className="text-2xl font-bold text-center capitalize">Register now to secure your files</h5>
         <form onSubmit={handleSubmit}>
           <div className="input-container">
             <input
               placeholder="Enter Email"
               className="input-field"
-              type="text"
+              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <label for="input-field" className="input-label">
               Email
@@ -41,9 +42,10 @@ const SignUp = () => {
             <input
               placeholder="Enter Password"
               className="input-field"
-              type="text"
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <label for="input-field" className="input-label">
               Password
@@ -51,7 +53,7 @@ const SignUp = () => {
             <span className="input-highlight"></span>
           </div>
 
-          {error && <p>{error}</p>}
+          {error && <p className="mx-5 text-red-500">{error}</p>}
           <p className="mx-5 my-2 text-xs">
             Already have an account!{" "}
             <Link to="/sign_in" className="underline">
